@@ -1,0 +1,14 @@
+#!/bin/sh
+
+cd $MARKNOTES_HOME/app
+
+if [[ "$(ps -A | grep marknotes-app.js)" == *"node marknotes-app.js"* ]]; then
+  # If we are already running the app, simply open it in the default web browser
+  echo 'marknotes app already running...'
+  open http://localhost:3000/notes
+else
+  # Otherwise, start the app
+  echo 'starting new marknotes app...'
+  node marknotes-app.js
+fi
+

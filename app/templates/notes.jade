@@ -1,0 +1,15 @@
+html
+  head
+    title= "marknotes"
+    link(rel="stylesheet", href="/css/github-markdown.css")
+    link(rel="stylesheet", href="/css/marknotes.css") 
+  body
+    div.markdown-body
+      h1 marknotes
+      ul
+        each file in files
+          li
+            h4: a(href='notes/'+ file) #{file}
+        else
+          li
+            h4 you have no notes

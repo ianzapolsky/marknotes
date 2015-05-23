@@ -1,0 +1,21 @@
+#!/bin/sh
+
+cd $MARKNOTES_HOME/app
+
+# Open the directory with vim
+vim notes
+
+# Delete all existing html files, if any exist
+if [ "$(ls notes_html)" ]; then
+    rm notes_html/*
+fi
+
+# Recompile all markdown notes to html
+for file in $(ls notes); do
+    clean_file=${file%.*}
+    marked -o notes_html/$clean_file.html notes/$clean_file.md
+done
+
+echo "notes have been recompiled"
+
+    

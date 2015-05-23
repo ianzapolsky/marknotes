@@ -1,0 +1,13 @@
+{
+  "name": "marknotes",
+  "version": "0.0.1",
+  "main": "marknotes-app.js",
+  "author": "ianzapolsky",
+  "devDependencies": {
+    "express": "^4.12.4",
+    "express-params": "0.0.3",
+    "github-markdown-css": "^2.0.8",
+    "jade": "^1.9.2",
+    "marked": "^0.3.3"
+  }
+}

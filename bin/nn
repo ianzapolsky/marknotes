@@ -1,0 +1,27 @@
+#!/bin/sh
+
+cd $MARKNOTES_HOME
+
+echo "Please enter a title for your note: "
+read title
+
+# Replace special characters with periods with dashes
+filename="${title// /-}"
+filename="${filename//./-}"
+
+# Check for note title duplicates
+while [ "$(find app/notes -name $filename.md)" ]; do
+  echo "There is already a note with that title. Please enter another: "
+  read title
+  filename="${title// /-}"
+  filename="${filename//./-}"
+done
+
+# Create and open file for user to edit
+touch app/notes/$filename.md
+vim app/notes/$filename.md
+
+# Convert file to html after it has been saved
+marked -o app/notes_html/$filename.html app/notes/$filename.md
+
+echo "$filename was successfully created"
