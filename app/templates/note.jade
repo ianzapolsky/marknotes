@@ -3,6 +3,11 @@ html
     title #{title}
     link(rel="stylesheet", href="/css/github-markdown.css")
     link(rel="stylesheet", href="/css/marknotes.css") 
+    link(rel="stylesheet", href="/css/styles/default.css")
+
+    script(src="/js/highlight.pack.js")
+    script(type="text/javascript").
+      hljs.initHighlightingOnLoad();
   body
     div.markdown-body
       h1 #{title}

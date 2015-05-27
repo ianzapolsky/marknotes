@@ -1,1 +1,3 @@
 node_modules/*
+app/notes/*.md
+app/notes_html/*.html

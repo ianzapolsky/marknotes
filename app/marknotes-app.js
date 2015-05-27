@@ -29,6 +29,7 @@ app.get('/notes/:file', function(req, res) {
 });
 
 app.use('/css', express.static('css'));
+app.use('/js', express.static('js'));
 
 app.listen(3000, function () {
     console.log('notebook served at http://localhost:3000');
