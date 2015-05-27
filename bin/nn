@@ -18,7 +18,7 @@ while [ "$(find app/notes -name $filename.md)" ]; do
 done
 
 # Create and open file for user to edit
-touch app/notes/$filename.md
+echo "# $title" > app/notes/$filename.md
 vim app/notes/$filename.md
 
 # Convert file to html after it has been saved
